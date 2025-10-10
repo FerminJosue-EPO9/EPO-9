@@ -1,0 +1,161 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Encabezado */
+.header {
+    text-align: center;
+    padding: 30px 0;
+    background: linear-gradient(135deg, #0A1428, #1E2A3A);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 3em;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Párrafos */
+.content-paragraph {
+    text-align: justify;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    padding: 0 15px;
+}
+
+/* Lista de servicios */
+.services-list {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #667eea;
+    margin: 20px 0;
+}
+
+.services-list ol {
+    padding-left: 20px;
+}
+
+.services-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    padding: 8px;
+    background: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.services-list li:hover {
+    transform: translateX(10px);
+    background: #e3f2fd;
+}
+
+/* Tabla de precios */
+.pricing-table {
+    margin: 30px 0;
+    overflow-x: auto;
+}
+
+.table-container {
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pricing-table table {
+    border-collapse: collapse;
+    min-width: 800px;
+    background: white;
+}
+
+.pricing-table th {
+    background: linear-gradient(135deg, #0A1428, #2D3748);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pricing-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-table tr:hover td {
+    background-color: #f5f5f5;
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Información de contacto */
+.contact-info {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Efectos de precio */
+.price {
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.quantity {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .pricing-table {
+        font-size: 0.9em;
+    }
+}
