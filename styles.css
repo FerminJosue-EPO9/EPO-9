@@ -1,161 +1,95 @@
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+
+    margin: 0;
+    padding: 10px 0px;
+
+    /* Frost CSS Linear Gradient Background */
+        background: #000428;
+        background: linear-gradient(to left,
+                #000428, #004e92)
+
+}
+
+/* Estilo general del header */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px); /* Más desenfoque */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+}
+
+/* Logo a la izquierda */
+.logo img {
+    background-color: transparent;
+    height: 25px;
+    padding: 0px 40px;
+    display: block;
+}
+
+/* Menú central */
+.menu-centro {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    gap: 30px;
+}
+
+.menu-centro a {
+    text-decoration: none;
     color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.5s;
 }
 
-/* Contenedor principal */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin-top: 20px;
-    margin-bottom: 20px;
+.menu-centro a:hover {
+    color: #0077cc;
 }
 
-/* Encabezado */
-.header {
-    text-align: center;
-    padding: 30px 0;
-    background: linear-gradient(135deg, #0A1428, #1E2A3A);
+/* Botones a la derecha */
+.acciones button {
+    background-color: #0077cc;
     color: white;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.header h1 {
-    font-size: 3em;
-    font-weight: 300;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-/* Párrafos */
-.content-paragraph {
-    text-align: justify;
-    margin-bottom: 25px;
-    font-size: 1.1em;
-    padding: 0 15px;
-}
-
-/* Lista de servicios */
-.services-list {
-    background: #f8f9fa;
-    padding: 25px;
-    border-radius: 10px;
-    border-left: 5px solid #667eea;
-    margin: 20px 0;
-}
-
-.services-list ol {
-    padding-left: 20px;
-}
-
-.services-list li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    padding: 8px;
-    background: white;
+    border: none;
+    padding: 8px 15px;
     border-radius: 5px;
-    transition: transform 0.3s ease;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color .5s;
+    font-size: 1rem;
 }
 
-.services-list li:hover {
-    transform: translateX(10px);
-    background: #e3f2fd;
+.acciones button:hover {
+    background-color: #005fa3;
 }
 
-/* Tabla de precios */
-.pricing-table {
-    margin: 30px 0;
-    overflow-x: auto;
+.container {
+    display: flex;
+    justify-content: space-evenly; /* separa uniformemente los elementos */
+    align-items: center;           /* centra verticalmente dentro del contenedor */
+    margin: 20px 0;                /* espacio arriba y abajo */
+    gap: 20px;                     /* espacio entre la caja y la imagen */
 }
 
-.table-container {
-    display: inline-block;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.pricing-table table {
-    border-collapse: collapse;
-    min-width: 800px;
-    background: white;
-}
-
-.pricing-table th {
-    background: linear-gradient(135deg, #0A1428, #2D3748);
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.pricing-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #e0e0e0;
-    transition: background-color 0.3s ease;
-}
-
-.pricing-table tr:hover td {
-    background-color: #f5f5f5;
-}
-
-.pricing-table tr:last-child td {
-    border-bottom: none;
-}
-
-/* Información de contacto */
-.contact-info {
+.caja-texto {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 10px;
+    border-radius: 10px;   /* bordes redondeados */
+    max-width: 900px;      /* opcional, limita ancho */
     text-align: center;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,10); /* opcional para darle profundidad */
 }
 
-/* Efectos de precio */
-.price {
-    color: #2e7d32;
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-.quantity {
-    color: #d32f2f;
-    font-weight: bold;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        margin: 10px;
-        padding: 15px;
-    }
-    
-    .header h1 {
-        font-size: 2em;
-    }
-    
-    .pricing-table {
-        font-size: 0.9em;
-    }
+.caja-imagen img {
+    width: 250px;         /* ajusta a tu gusto */
+    height: auto;         /* mantiene proporción */
+    border-radius: 15px;  /* bordes redondeados visibles */
+    object-fit: cover;    /* ajusta la imagen dentro del tamaño */
+    box-shadow: 0 2px 5px rgba(0,0,0,10); /* opcional para darle profundidad */
 }
