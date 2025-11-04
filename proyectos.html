@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - EPO-9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="epo9_titulo.png" alt="Logo EPO-9">
+        </div>
+
+        <nav class="menu-centro">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html" class="active">Proyectos</a>
+            <a href="comentarios.html">Comentarios</a>
+            <a href="contactos.html">Contactos</a>
+        </nav>
+
+        <div class="acciones">
+            <button>Iniciar sesión</button>
+            <button>Registrarse</button>
+        </div>
+    </header>
+
+    <!-- Hero Section Proyectos -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nuestros Proyectos</h1>
+            <p>Descubre las soluciones tecnológicas innovadoras que desarrollamos en EPO-9. Cada proyecto está diseñado con accesibilidad, eficiencia y replicabilidad en mente.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="filtrarProyectos('todos')">Ver Todos</button>
+                <button class="btn-secondary" onclick="filtrarProyectos('destacados')">Proyectos Destacados</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="epo9_logo.jpg" alt="Proyectos EPO-9">
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section class="proyectos-section">
+        <div class="section-header">
+            <h2>Innovación en Acción</h2>
+            <p>Explora nuestros desarrollos tecnológicos y sus aplicaciones en la vida real</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filtros-proyectos">
+            <button class="filtro-btn active" onclick="filtrarProyectos('todos')">Todos</button>
+            <button class="filtro-btn" onclick="filtrarProyectos('electronica')">Electrónica</button>
+            <button class="filtro-btn" onclick="filtrarProyectos('software')">Software</button>
+            <button class="filtro-btn" onclick="filtrarProyectos('iot')">IoT</button>
+            <button class="filtro-btn" onclick="filtrarProyectos('destacados')">Destacados</button>
+        </div>
+
+        <!-- Grid de Proyectos -->
+        <div class="proyectos-grid" id="proyectosGrid">
+            <!-- Proyecto 1: Stairway -->
+            <div class="proyecto-card fade-up destacado electronica iot" data-categoria="electronica iot destacado">
+                <div class="proyecto-header">
+                    <span class="proyecto-badge destacado">Destacado</span>
+                    <span class="proyecto-badge electronica">Electrónica</span>
+                    <span class="proyecto-badge iot">IoT</span>
+                </div>
+                <div class="video-contenedor">
+                    <iframe src="https://www.youtube.com/embed/1P8HY1XhRnY?si=vZscQhM5tyqo-AlZ" 
+                            title="Proyecto Stairway - EPO-9" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="proyecto-content">
+                    <h3>Stairway - Sistema de Gestión de Agua</h3>
+                    <p class="proyecto-descripcion">
+                        Sistema modular automático para regular el consumo de agua en hogares y edificios. 
+                        Optimiza el uso del recurso hídrico mediante sensores inteligentes y control remoto.
+                    </p>
+                    <div class="proyecto-caracteristicas">
+                        <span class="caracteristica">🔄 Automatización</span>
+                        <span class="caracteristica">💧 Gestión eficiente</span>
+                        <span class="caracteristica">📱 Control remoto</span>
+                    </div>
+                    <div class="proyecto-actions">
+                        <button class="btn-detalles" onclick="mostrarDetalles('stairway')">Ver Detalles</button>
+                        <button class="btn-contactar" onclick="solicitarInfo('Stairway')">Solicitar Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 2: Distance -->
+            <div class="proyecto-card fade-up electronica" data-categoria="electronica">
+                <div class="proyecto-header">
+                    <span class="proyecto-badge electronica">Electrónica</span>
+                    <span class="proyecto-badge seguridad">Seguridad</span>
+                </div>
+                <div class="video-contenedor">
+                    <iframe src="https://www.youtube.com/embed/Z_2v8EQc0ZM" 
+                            title="Proyecto Distance - EPO-9" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="proyecto-content">
+                    <h3>Distance - Sistema de Detección</h3>
+                    <p class="proyecto-descripcion">
+                        Sistema de advertencia por proximidad que utiliza sensores infrarrojos para detectar 
+                        objetos en entornos laborales y domésticos, mejorando la seguridad y prevención de accidentes.
+                    </p>
+                    <div class="proyecto-caracteristicas">
+                        <span class="caracteristica">🛡️ Seguridad</span>
+                        <span class="caracteristica">📏 Precisión</span>
+                        <span class="caracteristica">⚡ Respuesta rápida</span>
+                    </div>
+                    <div class="proyecto-actions">
+                        <button class="btn-detalles" onclick="mostrarDetalles('distance')">Ver Detalles</button>
+                        <button class="btn-contactar" onclick="solicitarInfo('Distance')">Solicitar Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3: EnergyFlow -->
+            <div class="proyecto-card fade-up destacado software iot" data-categoria="software iot destacado">
+                <div class="proyecto-header">
+                    <span class="proyecto-badge destacado">Destacado</span>
+                    <span class="proyecto-badge software">Software</span>
+                    <span class="proyecto-badge iot">IoT</span>
+                </div>
+                <div class="video-contenedor">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Proyecto EnergyFlow - EPO-9" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="proyecto-content">
+                    <h3>EnergyFlow - Monitor Energético</h3>
+                    <p class="proyecto-descripcion">
+                        Plataforma de monitoreo y gestión de consumo energético en tiempo real. 
+                        Analiza patrones de uso y sugiere optimizaciones para reducir costos y huella de carbono.
+                    </p>
+                    <div class="proyecto-caracteristicas">
+                        <span class="caracteristica">📊 Analytics</span>
+                        <span class="caracteristica">💡 Eficiencia</span>
+                        <span class="caracteristica">🌱 Sostenibilidad</span>
+                    </div>
+                    <div class="proyecto-actions">
+                        <button class="btn-detalles" onclick="mostrarDetalles('energyflow')">Ver Detalles</button>
+                        <button class="btn-contactar" onclick="solicitarInfo('EnergyFlow')">Solicitar Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 4: AgriSense -->
+            <div class="proyecto-card fade-up iot" data-categoria="iot">
+                <div class="proyecto-header">
+                    <span class="proyecto-badge iot">IoT</span>
+                    <span class="proyecto-badge agricultura">Agricultura</span>
+                </div>
+                <div class="video-contenedor">
+                    <iframe src="https://www.youtube.com/embed/abc123" 
+                            title="Proyecto AgriSense - EPO-9" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="proyecto-content">
+                    <h3>AgriSense - Agricultura Inteligente</h3>
+                    <p class="proyecto-descripcion">
+                        Sistema de sensores para monitoreo de cultivos que mide humedad, temperatura 
+                        y nutrientes del suelo, optimizando el riego y aumentando la productividad.
+                    </p>
+                    <div class="proyecto-caracteristicas">
+                        <span class="caracteristica">🌱 Agricultura</span>
+                        <span class="caracteristica">📡 Sensores</span>
+                        <span class="caracteristica">💧 Riego eficiente</span>
+                    </div>
+                    <div class="proyecto-actions">
+                        <button class="btn-detalles" onclick="mostrarDetalles('agrisense')">Ver Detalles</button>
+                        <button class="btn-contactar" onclick="solicitarInfo('AgriSense')">Solicitar Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 5: HealthTrack -->
+            <div class="proyecto-card fade-up software" data-categoria="software">
+                <div class="proyecto-header">
+                    <span class="proyecto-badge software">Software</span>
+                    <span class="proyecto-badge salud">Salud</span>
+                </div>
+                <div class="video-contenedor">
+                    <iframe src="https://www.youtube.com/embed/def456" 
+                            title="Proyecto HealthTrack - EPO-9" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="proyecto-content">
+                    <h3>HealthTrack - Monitoreo Médico</h3>
+                    <p class="proyecto-descripcion">
+                        Aplicación móvil para seguimiento de indicadores de salud, recordatorios de medicación 
+                        y conexión con profesionales médicos para teleconsultas.
+                    </p>
+                    <div class="proyecto-caracteristicas">
+                        <span class="caracteristica">🏥 Salud</span>
+                        <span class="caracteristica">📱 App móvil</span>
+                        <span class="caracteristica">👨‍⚕️ Telemedicina</span>
+                    </div>
+                    <div class="proyecto-actions">
+                        <button class="btn-detalles" onclick="mostrarDetalles('healthtrack')">Ver Detalles</button>
+                        <button class="btn-contactar" onclick="solicitarInfo('HealthTrack')">Solicitar Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 6: EduTech -->
+            <div class="proyecto-card fade-up software" data-categoria="software">
+                <div class="proyecto-header">
+                    <span class="proyecto-badge software">Software</span>
+                    <span class="proyecto-badge educacion">Educación</span>
+                </div>
+                <div class="video-contenedor">
+                    <iframe src="https://www.youtube.com/embed/ghi789" 
+                            title="Proyecto EduTech - EPO-9" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="proyecto-content">
+                    <h3>EduTech - Plataforma Educativa</h3>
+                    <p class="proyecto-descripcion">
+                        Sistema de aprendizaje interactivo que utiliza realidad aumentada y gamificación 
+                        para hacer la educación más accesible y atractiva para todos los niveles.
+                    </p>
+                    <div class="proyecto-caracteristicas">
+                        <span class="caracteristica">🎓 Educación</span>
+                        <span class="caracteristica">🎮 Gamificación</span>
+                        <span class="caracteristica">📚 Interactivo</span>
+                    </div>
+                    <div class="proyecto-actions">
+                        <button class="btn-detalles" onclick="mostrarDetalles('edutech')">Ver Detalles</button>
+                        <button class="btn-contactar" onclick="solicitarInfo('EduTech')">Solicitar Info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <p>© 2025 EPO-9. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:contacto@epo9.com">contacto@epo9.com</a> | Tel: +52 123 456 7890</p>
+    </footer>
+
+    <script>
+        // Animación de elementos al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página de proyectos cargada - EPO-9');
+            
+            // Función para animar elementos al hacer scroll
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.fade-up');
+                const windowHeight = window.innerHeight;
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Ejecutar al cargar y al hacer scroll
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Botones de login/registro
+            const loginButtons = document.querySelectorAll('.acciones button');
+            loginButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    if (index === 0) {
+                        alert('Funcionalidad de Iniciar Sesión - En desarrollo');
+                    } else {
+                        alert('Funcionalidad de Registrarse - En desarrollo');
+                    }
+                });
+            });
+        });
+
+        // Función para filtrar proyectos
+        function filtrarProyectos(categoria) {
+            const proyectos = document.querySelectorAll('.proyecto-card');
+            const filtros = document.querySelectorAll('.filtro-btn');
+            
+            // Actualizar botones activos
+            filtros.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filtrar proyectos
+            proyectos.forEach(proyecto => {
+                if (categoria === 'todos' || proyecto.dataset.categoria.includes(categoria)) {
+                    proyecto.style.display = 'block';
+                    setTimeout(() => {
+                        proyecto.style.opacity = '1';
+                        proyecto.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    proyecto.style.opacity = '0';
+                    proyecto.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        proyecto.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Función para mostrar detalles del proyecto
+        function mostrarDetalles(proyectoId) {
+            alert(`Mostrando detalles del proyecto: ${proyectoId}\n\nEsta funcionalidad estará disponible próximamente con información técnica completa, documentación y especificaciones.`);
+        }
+
+        // Función para solicitar información
+        function solicitarInfo(nombreProyecto) {
+            alert(`¡Excelente elección! Has seleccionado: ${nombreProyecto}\n\nSerás redirigido al formulario de contacto para recibir información detallada.`);
+            setTimeout(() => {
+                window.location.href = 'contactos.html';
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>

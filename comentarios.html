@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios - EPO-9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="epo9_titulo.png" alt="Logo EPO-9">
+        </div>
+
+        <nav class="menu-centro">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="comentarios.html" class="active">Comentarios</a>
+            <a href="contactos.html">Contactos</a>
+        </nav>
+
+        <div class="acciones">
+            <button>Iniciar sesión</button>
+            <button>Registrarse</button>
+        </div>
+    </header>
+
+    <!-- Hero Section Comentarios -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tu Opinión Nos Importa</h1>
+            <p>Comparte tus ideas, sugerencias y comentarios sobre nuestros proyectos. Tu feedback es esencial para mejorar y crear soluciones que realmente marquen la diferencia.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="scrollToForm()">Dejar Comentario</button>
+                <button class="btn-secondary" onclick="verComentarios()">Ver Comentarios</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="epo9_logo.jpg" alt="Comentarios EPO-9">
+        </div>
+    </section>
+
+    <!-- Sección de Formulario de Comentarios -->
+    <section class="comentarios-section">
+        <div class="section-header">
+            <h2>Comparte Tu Experiencia</h2>
+            <p>Ayúdanos a mejorar contándonos tu opinión sobre nuestros proyectos y servicios</p>
+        </div>
+
+        <div class="formulario-comentarios">
+            <form class="formulario-principal" id="formComentario">
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="proyecto" class="form-label">Proyecto Relacionado</label>
+                    <select id="proyecto" name="proyecto" class="form-select">
+                        <option value="">Selecciona un proyecto</option>
+                        <option value="stairway">Stairway - Sistema de Agua</option>
+                        <option value="distance">Distance - Detección</option>
+                        <option value="energyflow">EnergyFlow - Energía</option>
+                        <option value="agrisense">AgriSense - Agricultura</option>
+                        <option value="healthtrack">HealthTrack - Salud</option>
+                        <option value="edutech">EduTech - Educación</option>
+                        <option value="general">Comentario General</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentario" class="form-label">Tu Comentario</label>
+                    <textarea id="comentario" name="comentario" class="form-textarea" rows="6" placeholder="Comparte tus ideas, sugerencias o experiencias con nuestros proyectos..." required></textarea>
+                    <div class="contador-caracteres">
+                        <span id="contador">0</span> / 1000 caracteres
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tipo de Comentario</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="tipo" value="sugerencia" checked>
+                            <span class="radio-custom"></span>
+                            Sugerencia
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="tipo" value="reporte">
+                            <span class="radio-custom"></span>
+                            Reporte de Problema
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="tipo" value="elogio">
+                            <span class="radio-custom"></span>
+                            Elogio
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="tipo" value="pregunta">
+                            <span class="radio-custom"></span>
+                            Pregunta
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Subida de Archivos Mejorada -->
+                <div class="form-group">
+                    <label class="form-label">Evidencia Fotográfica (Opcional)</label>
+                    <div class="upload-container">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">📁</div>
+                            <h4>Arrastra tus archivos aquí</h4>
+                            <p>o haz clic para seleccionar</p>
+                            <span class="upload-formats">Formatos soportados: JPG, PNG, GIF (Máx. 5MB)</span>
+                            <input type="file" id="file-input" accept="image/*" multiple>
+                        </div>
+                        <div class="file-preview" id="filePreview"></div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-reset">
+                        <span>🔄</span>
+                        Limpiar Formulario
+                    </button>
+                    <button type="submit" class="btn-submit">
+                        <span>📨</span>
+                        Enviar Comentario
+                    </button>
+                </div>
+            </form>
+
+            <!-- Información Adicional -->
+            <div class="info-lateral">
+                <div class="info-card">
+                    <div class="info-icon">💡</div>
+                    <h3>¿Por qué tu opinión importa?</h3>
+                    <p>Tus comentarios nos ayudan a:</p>
+                    <ul>
+                        <li>Mejorar nuestros productos</li>
+                        <li>Identificar áreas de oportunidad</li>
+                        <li>Crear soluciones más efectivas</li>
+                        <li>Priorizar nuevas características</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">⏱️</div>
+                    <h3>Tiempo de Respuesta</h3>
+                    <p>Normalmente respondemos a todos los comentarios dentro de las <strong>48 horas</strong> hábiles.</p>
+                    <p>Los reportes críticos tienen prioridad y son atendidos en menos de 24 horas.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🔒</div>
+                    <h3>Privacidad Garantizada</h3>
+                    <p>Tu información personal está protegida. No compartimos tus datos con terceros y todos los comentarios son tratados con confidencialidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Comentarios Recientes -->
+    <section class="comentarios-recientes">
+        <div class="section-header">
+            <h2>Comentarios de la Comunidad</h2>
+            <p>Lo que otros usuarios opinan sobre nuestros proyectos</p>
+        </div>
+
+        <div class="comentarios-grid">
+            <div class="comentario-card fade-up">
+                <div class="comentario-header">
+                    <div class="usuario-info">
+                        <div class="avatar">👤</div>
+                        <div>
+                            <h4>Fulanita González</h4>
+                            <span class="fecha">Hace 2 días</span>
+                        </div>
+                    </div>
+                    <span class="tipo-comentario sugerencia">Sugerencia</span>
+                </div>
+                <p class="comentario-texto">"El proyecto Stairway ha sido increíble para mi comunidad. Sugeriría añadir una función de notificación por SMS para alertas importantes."</p>
+                <div class="comentario-footer">
+                    <span class="proyecto-tag">Stairway</span>
+                    <div class="acciones-comentario">
+                        <button class="btn-like">👍 12</button>
+                        <button class="btn-reply">Responder</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comentario-card fade-up">
+                <div class="comentario-header">
+                    <div class="usuario-info">
+                        <div class="avatar">👤</div>
+                        <div>
+                            <h4>Carlos Rodríguez</h4>
+                            <span class="fecha">Hace 1 semana</span>
+                        </div>
+                    </div>
+                    <span class="tipo-comentario elogio">Elogio</span>
+                </div>
+                <p class="comentario-texto">"Distance ha mejorado la seguridad en nuestra fábrica. La instalación fue sencilla y el equipo de soporte muy profesional. ¡Excelente trabajo!"</p>
+                <div class="comentario-footer">
+                    <span class="proyecto-tag">Distance</span>
+                    <div class="acciones-comentario">
+                        <button class="btn-like">👍 8</button>
+                        <button class="btn-reply">Responder</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comentario-card fade-up">
+                <div class="comentario-header">
+                    <div class="usuario-info">
+                        <div class="avatar">👤</div>
+                        <div>
+                            <h4>Luffy Martínez</h4>
+                            <span class="fecha">Hace 3 días</span>
+                        </div>
+                    </div>
+                    <span class="tipo-comentario pregunta">Pregunta</span>
+                </div>
+                <p class="comentario-texto">"¿El sistema EnergyFlow es compatible con paneles solares? Estoy interesado en implementarlo en mi negocio pero necesito esa información."</p>
+                <div class="comentario-footer">
+                    <span class="proyecto-tag">EnergyFlow</span>
+                    <div class="respuesta-oficial">
+                        <strong>Respuesta EPO-9:</strong> ¡Sí! EnergyFlow es totalmente compatible con sistemas de energía solar. Te contactaremos para más detalles.
+                    </div>
+                    <div class="acciones-comentario">
+                        <button class="btn-like">👍 5</button>
+                        <button class="btn-reply">Responder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <p>© 2025 EPO-9. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:contacto@epo9.com">contacto@epo9.com</a> | Tel: +52 123 456 7890</p>
+    </footer>
+
+    <script>
+        // Animación de elementos al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página de comentarios cargada - EPO-9');
+            
+            // Función para animar elementos al hacer scroll
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.fade-up');
+                const windowHeight = window.innerHeight;
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Ejecutar al cargar y al hacer scroll
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Botones de login/registro
+            const loginButtons = document.querySelectorAll('.acciones button');
+            loginButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    if (index === 0) {
+                        alert('Funcionalidad de Iniciar Sesión - En desarrollo');
+                    } else {
+                        alert('Funcionalidad de Registrarse - En desarrollo');
+                    }
+                });
+            });
+
+            // Contador de caracteres
+            const textarea = document.getElementById('comentario');
+            const contador = document.getElementById('contador');
+            
+            textarea.addEventListener('input', function() {
+                const longitud = this.value.length;
+                contador.textContent = longitud;
+                
+                if (longitud > 1000) {
+                    contador.style.color = '#ff4757';
+                } else if (longitud > 800) {
+                    contador.style.color = '#ffa502';
+                } else {
+                    contador.style.color = 'var(--texto-claro)';
+                }
+            });
+
+            // Sistema de subida de archivos
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('file-input');
+            const filePreview = document.getElementById('filePreview');
+
+            uploadArea.addEventListener('click', () => fileInput.click());
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('drag-over');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('drag-over');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('drag-over');
+                handleFiles(e.dataTransfer.files);
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            function handleFiles(files) {
+                for (let file of files) {
+                    if (file.type.startsWith('image/')) {
+                        if (file.size > 5 * 1024 * 1024) {
+                            alert('El archivo es demasiado grande. Máximo 5MB.');
+                            continue;
+                        }
+                        
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const previewItem = document.createElement('div');
+                            previewItem.className = 'preview-item';
+                            previewItem.innerHTML = `
+                                <img src="${e.target.result}" alt="Preview">
+                                <button type="button" class="remove-file">×</button>
+                                <span class="file-name">${file.name}</span>
+                            `;
+                            filePreview.appendChild(previewItem);
+                            
+                            previewItem.querySelector('.remove-file').addEventListener('click', function() {
+                                previewItem.remove();
+                            });
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        alert('Solo se permiten archivos de imagen.');
+                    }
+                }
+            }
+
+            // Envío del formulario
+            const form = document.getElementById('formComentario');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simular envío
+                const submitBtn = form.querySelector('.btn-submit');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<span>⏳</span> Enviando...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('¡Gracias por tu comentario! Hemos recibido tu mensaje y lo revisaremos pronto.');
+                    form.reset();
+                    filePreview.innerHTML = '';
+                    contador.textContent = '0';
+                    contador.style.color = 'var(--texto-claro)';
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+
+            // Reset del formulario
+            form.addEventListener('reset', function() {
+                filePreview.innerHTML = '';
+                contador.textContent = '0';
+                contador.style.color = 'var(--texto-claro)';
+            });
+        });
+
+        function scrollToForm() {
+            document.querySelector('.comentarios-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function verComentarios() {
+            document.querySelector('.comentarios-recientes').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos - EPO-9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="epo9_titulo.png" alt="Logo EPO-9">
+        </div>
+
+        <nav class="menu-centro">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="comentarios.html">Comentarios</a>
+            <a href="contactos.html" class="active">Contactos</a>
+        </nav>
+
+        <div class="acciones">
+            <button>Iniciar sesión</button>
+            <button>Registrarse</button>
+        </div>
+    </header>
+
+    <!-- Hero Section Contactos -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Conoce Nuestro Equipo</h1>
+            <p>El talento humano detrás de EPO-9. Conoce a nuestro equipo de profesionales apasionados por la tecnología y la innovación, listos para colaborar en nuevos proyectos y desafíos.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="scrollToTeam()">Ver Equipo</button>
+                <button class="btn-secondary" onclick="scrollToContact()">Contactar Directamente</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="epo9_logo.jpg" alt="Equipo EPO-9">
+        </div>
+    </section>
+
+    <!-- Sección del Equipo -->
+    <section class="equipo-section">
+        <div class="section-header">
+            <h2>Nuestro Equipo de Expertos</h2>
+            <p>Profesionales dedicados a crear soluciones tecnológicas innovadoras</p>
+        </div>
+
+        <!-- Filtros de equipo -->
+        <div class="filtros-equipo">
+            <button class="filtro-btn active" onclick="filtrarEquipo('todos')">Todos</button>
+            <button class="filtro-btn" onclick="filtrarEquipo('fundadores')">Fundadores</button>
+            <button class="filtro-btn" onclick="filtrarEquipo('desarrollo')">Desarrollo</button>
+            <button class="filtro-btn" onclick="filtrarEquipo('electronica')">Electrónica</button>
+            <button class="filtro-btn" onclick="filtrarEquipo('investigacion')">Investigación</button>
+        </div>
+
+        <!-- Grid del equipo -->
+        <div class="equipo-grid" id="equipoGrid">
+            <!-- Miembro 1: Fundador -->
+            <div class="miembro-card fade-up fundadores" data-categoria="fundadores">
+                <div class="miembro-header">
+                    <span class="miembro-rol fundador">Fundador</span>
+                    <span class="miembro-estado disponible">Disponible</span>
+                </div>
+                <div class="miembro-avatar">
+                    <div class="avatar-img">J</div>
+                    <div class="avatar-status"></div>
+                </div>
+                <div class="miembro-info">
+                    <h3>Josué Jiménez Fermín</h3>
+                    <p class="miembro-cargo">CEO & Líder de Proyectos</p>
+                    <p class="miembro-descripcion">
+                        Ingeniero en Computación con más de 5 años de experiencia en desarrollo de software 
+                        y sistemas embebidos. Apasionado por crear soluciones accesibles.
+                    </p>
+                    <div class="miembro-especialidades">
+                        <span class="especialidad">Liderazgo</span>
+                        <span class="especialidad">Arquitectura</span>
+                        <span class="especialidad">IoT</span>
+                    </div>
+                </div>
+                <div class="miembro-contacto">
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📧</span>
+                        <a href="mailto:josue@epo9.com">josue@epo9.com</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📱</span>
+                        <span>+52 55 1234 5678</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">💼</span>
+                        <span>Proyectos estratégicos</span>
+                    </div>
+                </div>
+                <div class="miembro-actions">
+                    <button class="btn-contactar-miembro" onclick="contactarMiembro('Josué Jiménez')">Contactar</button>
+                    <button class="btn-linkedin" onclick="abrirLinkedIn('josuejf')">LinkedIn</button>
+                </div>
+            </div>
+
+            <!-- Miembro 2: Desarrollo -->
+            <div class="miembro-card fade-up desarrollo" data-categoria="desarrollo">
+                <div class="miembro-header">
+                    <span class="miembro-rol desarrollo">Desarrollo</span>
+                    <span class="miembro-estado disponible">Disponible</span>
+                </div>
+                <div class="miembro-avatar">
+                    <div class="avatar-img">E</div>
+                    <div class="avatar-status"></div>
+                </div>
+                <div class="miembro-info">
+                    <h3>Esther Rodríguez</h3>
+                    <p class="miembro-cargo">Desarrolladora Full Stack</p>
+                    <p class="miembro-descripcion">
+                        Especialista en desarrollo web y aplicaciones móviles. Experta en React, Node.js 
+                        y bases de datos. Comprometida con la creación de interfaces intuitivas.
+                    </p>
+                    <div class="miembro-especialidades">
+                        <span class="especialidad">Frontend</span>
+                        <span class="especialidad">Backend</span>
+                        <span class="especialidad">UX/UI</span>
+                    </div>
+                </div>
+                <div class="miembro-contacto">
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📧</span>
+                        <a href="mailto:ana.rodriguez@epo9.com">ana.rodriguez@epo9.com</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📱</span>
+                        <span>+52 55 2345 6789</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">💼</span>
+                        <span>Desarrollo web/móvil</span>
+                    </div>
+                </div>
+                <div class="miembro-actions">
+                    <button class="btn-contactar-miembro" onclick="contactarMiembro('Ana Rodríguez')">Contactar</button>
+                    <button class="btn-linkedin" onclick="abrirLinkedIn('anarodriguez')">LinkedIn</button>
+                </div>
+            </div>
+
+            <!-- Miembro 3: Electrónica -->
+            <div class="miembro-card fade-up electronica" data-categoria="electronica">
+                <div class="miembro-header">
+                    <span class="miembro-rol electronica">Electrónica</span>
+                    <span class="miembro-estado ocupado">Ocupado</span>
+                </div>
+                <div class="miembro-avatar">
+                    <div class="avatar-img">C</div>
+                    <div class="avatar-status ocupado"></div>
+                </div>
+                <div class="miembro-info">
+                    <h3>Carlos Mendoza</h3>
+                    <p class="miembro-cargo">Ingeniero Electrónico</p>
+                    <p class="miembro-descripcion">
+                        Experto en diseño de circuitos, sistemas embebidos y prototipado. 
+                        Especializado en IoT y automatización de procesos industriales.
+                    </p>
+                    <div class="miembro-especialidades">
+                        <span class="especialidad">Circuitos</span>
+                        <span class="especialidad">Embebidos</span>
+                        <span class="especialidad">IoT</span>
+                    </div>
+                </div>
+                <div class="miembro-contacto">
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📧</span>
+                        <a href="mailto:carlos.mendoza@epo9.com">carlos.mendoza@epo9.com</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📱</span>
+                        <span>+52 55 3456 7890</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">💼</span>
+                        <span>Proyectos hardware</span>
+                    </div>
+                </div>
+                <div class="miembro-actions">
+                    <button class="btn-contactar-miembro" onclick="contactarMiembro('Carlos Mendoza')">Contactar</button>
+                    <button class="btn-linkedin" onclick="abrirLinkedIn('carlosmendoza')">LinkedIn</button>
+                </div>
+            </div>
+
+            <!-- Miembro 4: Investigación -->
+            <div class="miembro-card fade-up investigacion" data-categoria="investigacion">
+                <div class="miembro-header">
+                    <span class="miembro-rol investigacion">Investigación</span>
+                    <span class="miembro-estado disponible">Disponible</span>
+                </div>
+                <div class="miembro-avatar">
+                    <div class="avatar-img">F</div>
+                    <div class="avatar-status"></div>
+                </div>
+                <div class="miembro-info">
+                    <h3>Fulanita González</h3>
+                    <p class="miembro-cargo">Investigadora en IA</p>
+                    <p class="miembro-descripcion">
+                        Doctora en Ciencias de la Computación especializada en inteligencia artificial 
+                        y machine learning. Enfocada en aplicaciones éticas de IA.
+                    </p>
+                    <div class="miembro-especialidades">
+                        <span class="especialidad">IA/ML</span>
+                        <span class="especialidad">Investigación</span>
+                        <span class="especialidad">Ética</span>
+                    </div>
+                </div>
+                <div class="miembro-contacto">
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📧</span>
+                        <a href="mailto:maria.gonzalez@epo9.com">fulanita.gonzalez@epo9.com</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📱</span>
+                        <span>+52 55 4567 8901</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">💼</span>
+                        <span>Proyectos de IA</span>
+                    </div>
+                </div>
+                <div class="miembro-actions">
+                    <button class="btn-contactar-miembro" onclick="contactarMiembro('Fulanita González')">Contactar</button>
+                    <button class="btn-linkedin" onclick="abrirLinkedIn('fulanitagonzalez')">LinkedIn</button>
+                </div>
+            </div>
+
+            <!-- Miembro 5: Desarrollo -->
+            <div class="miembro-card fade-up desarrollo" data-categoria="desarrollo">
+                <div class="miembro-header">
+                    <span class="miembro-rol desarrollo">Desarrollo</span>
+                    <span class="miembro-estado disponible">Disponible</span>
+                </div>
+                <div class="miembro-avatar">
+                    <div class="avatar-img">D</div>
+                    <div class="avatar-status"></div>
+                </div>
+                <div class="miembro-info">
+                    <h3>David Torres</h3>
+                    <p class="miembro-cargo">Desarrollador Backend</p>
+                    <p class="miembro-descripcion">
+                        Especialista en arquitectura de servidores, APIs y bases de datos. 
+                        Experto en optimización de rendimiento y seguridad informática.
+                    </p>
+                    <div class="miembro-especialidades">
+                        <span class="especialidad">Backend</span>
+                        <span class="especialidad">APIs</span>
+                        <span class="especialidad">Seguridad</span>
+                    </div>
+                </div>
+                <div class="miembro-contacto">
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📧</span>
+                        <a href="mailto:david.torres@epo9.com">david.torres@epo9.com</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📱</span>
+                        <span>+52 55 5678 9012</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">💼</span>
+                        <span>Infraestructura</span>
+                    </div>
+                </div>
+                <div class="miembro-actions">
+                    <button class="btn-contactar-miembro" onclick="contactarMiembro('David Torres')">Contactar</button>
+                    <button class="btn-linkedin" onclick="abrirLinkedIn('davidtorres')">LinkedIn</button>
+                </div>
+            </div>
+
+            <!-- Miembro 6: Electrónica -->
+            <div class="miembro-card fade-up electronica" data-categoria="electronica">
+                <div class="miembro-header">
+                    <span class="miembro-rol electronica">Electrónica</span>
+                    <span class="miembro-estado disponible">Disponible</span>
+                </div>
+                <div class="miembro-avatar">
+                    <div class="avatar-img">L</div>
+                    <div class="avatar-status"></div>
+                </div>
+                <div class="miembro-info">
+                    <h3>Laura Shirigara</h3>
+                    <p class="miembro-cargo">Ingeniera en Mecatrónica</p>
+                    <p class="miembro-descripcion">
+                        Especialista en robótica y sistemas automatizados. 
+                        Experiencia en integración hardware-software y prototipado rápido.
+                    </p>
+                    <div class="miembro-especialidades">
+                        <span class="especialidad">Robótica</span>
+                        <span class="especialidad">Automatización</span>
+                        <span class="especialidad">Mecatrónica</span>
+                    </div>
+                </div>
+                <div class="miembro-contacto">
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📧</span>
+                        <a href="mailto:laura.sanchez@epo9.com">laura.sanchez@epo9.com</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📱</span>
+                        <span>+52 55 6789 0123</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icon">💼</span>
+                        <span>Robótica</span>
+                    </div>
+                </div>
+                <div class="miembro-actions">
+                    <button class="btn-contactar-miembro" onclick="contactarMiembro('Laura Sánchez')">Contactar</button>
+                    <button class="btn-linkedin" onclick="abrirLinkedIn('laurasanchez')">LinkedIn</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto General -->
+    <section class="contacto-general">
+        <div class="section-header">
+            <h2>Contacto General</h2>
+            <p>¿No encuentras al especialista adecuado? Contáctanos directamente</p>
+        </div>
+
+        <div class="contacto-contenedor">
+            <div class="info-contacto">
+                <div class="info-card contacto">
+                    <div class="info-icon">🏢</div>
+                    <h3>Oficina Principal</h3>
+                    <p>Av. Tecnológico #123</p>
+                    <p>Ciudad de México, CDMX 03910</p>
+                    <p>México</p>
+                </div>
+
+                <div class="info-card contacto">
+                    <div class="info-icon">📞</div>
+                    <h3>Teléfonos</h3>
+                    <p><strong>Oficina:</strong> +52 55 1234 5678</p>
+                    <p><strong>Móvil:</strong> +52 55 9876 5432</p>
+                    <p><strong>WhatsApp:</strong> +52 55 5555 5555</p>
+                </div>
+
+                <div class="info-card contacto">
+                    <div class="info-icon">📧</div>
+                    <h3>Correos Electrónicos</h3>
+                    <p><strong>General:</strong> contacto@epo9.com</p>
+                    <p><strong>Proyectos:</strong> proyectos@epo9.com</p>
+                    <p><strong>Soporte:</strong> soporte@epo9.com</p>
+                </div>
+
+                <div class="info-card contacto">
+                    <div class="info-icon">🕒</div>
+                    <h3>Horarios de Atención</h3>
+                    <p><strong>Lunes - Viernes:</strong> 9:00 - 18:00 hrs</p>
+                    <p><strong>Sábados:</strong> 10:00 - 14:00 hrs</p>
+                    <p><strong>Emergencias:</strong> 24/7</p>
+                </div>
+            </div>
+
+            <form class="formulario-contacto-general" id="formContactoGeneral">
+                <h3>Envíanos un Mensaje</h3>
+                
+                <div class="form-group-doble">
+                    <div class="form-group">
+                        <label for="nombreContacto" class="form-label">Nombre Completo</label>
+                        <input type="text" id="nombreContacto" name="nombreContacto" class="form-input" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa" class="form-label">Empresa (Opcional)</label>
+                        <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Nombre de tu empresa">
+                    </div>
+                </div>
+
+                <div class="form-group-doble">
+                    <div class="form-group">
+                        <label for="emailContacto" class="form-label">Correo Electrónico</label>
+                        <input type="email" id="emailContacto" name="emailContacto" class="form-input" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+52 55 1234 5678">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto" class="form-label">Asunto</label>
+                    <select id="asunto" name="asunto" class="form-select" required>
+                        <option value="">Selecciona el asunto</option>
+                        <option value="colaboracion">Colaboración en Proyectos</option>
+                        <option value="cotizacion">Cotización de Servicios</option>
+                        <option value="soporte">Soporte Técnico</option>
+                        <option value="empleo">Oportunidades de Empleo</option>
+                        <option value="prensa">Prensa y Medios</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" class="form-textarea" rows="6" placeholder="Describe tu consulta, proyecto o colaboración de interés..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-reset">
+                        <span>🔄</span>
+                        Limpiar
+                    </button>
+                    <button type="submit" class="btn-submit">
+                        <span>📨</span>
+                        Enviar Mensaje
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <p>© 2025 EPO-9. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:contacto@epo9.com">contacto@epo9.com</a> | Tel: +52 123 456 7890</p>
+    </footer>
+
+    <script>
+        // Animación de elementos al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página de contactos cargada - EPO-9');
+            
+            // Función para animar elementos al hacer scroll
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.fade-up');
+                const windowHeight = window.innerHeight;
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Ejecutar al cargar y al hacer scroll
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Botones de login/registro
+            const loginButtons = document.querySelectorAll('.acciones button');
+            loginButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    if (index === 0) {
+                        alert('Funcionalidad de Iniciar Sesión - En desarrollo');
+                    } else {
+                        alert('Funcionalidad de Registrarse - En desarrollo');
+                    }
+                });
+            });
+
+            // Envío del formulario de contacto general
+            const form = document.getElementById('formContactoGeneral');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('.btn-submit');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<span>⏳</span> Enviando...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo en las próximas 24 horas.');
+                    form.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+        });
+
+        // Función para filtrar equipo
+        function filtrarEquipo(categoria) {
+            const miembros = document.querySelectorAll('.miembro-card');
+            const filtros = document.querySelectorAll('.filtro-btn');
+            
+            // Actualizar botones activos
+            filtros.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filtrar miembros
+            miembros.forEach(miembro => {
+                if (categoria === 'todos' || miembro.dataset.categoria.includes(categoria)) {
+                    miembro.style.display = 'block';
+                    setTimeout(() => {
+                        miembro.style.opacity = '1';
+                        miembro.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    miembro.style.opacity = '0';
+                    miembro.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        miembro.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Función para contactar miembro específico
+        function contactarMiembro(nombre) {
+            alert(`Iniciando contacto con: ${nombre}\n\nSerás redirigido a tu cliente de correo para enviar un mensaje directo.`);
+        }
+
+        // Función para abrir LinkedIn (simulada)
+        function abrirLinkedIn(usuario) {
+            alert(`Redirigiendo al perfil de LinkedIn de ${usuario}\n\nEn una implementación real, esto abriría el perfil correspondiente.`);
+        }
+
+        // Funciones de scroll
+        function scrollToTeam() {
+            document.querySelector('.equipo-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function scrollToContact() {
+            document.querySelector('.contacto-general').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+    </script>
+</body>
+
+</html>

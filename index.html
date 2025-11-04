@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPO-9 - Engineering, Programming & Optimization</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- Header mejorado -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="epo9_titulo.png" alt="Logo EPO-9">
+        </div>
+
+        <nav class="menu-centro">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="comentarios.html">Comentarios</a>
+            <a href="contactos.html">Contactos</a>
+        </nav>
+        
+        <div class="acciones">
+            <button>Iniciar sesión</button>
+            <button>Registrarse</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Engineering, Programming & Optimization</h1>
+            <p>Una compañía dedicada al desarrollo de proyectos de electrónica e informática con enfoque en
+                accesibilidad y replicabilidad para todos. Creamos soluciones tecnológicas que transforman vidas.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="window.location.href='proyectos.html'">Ver Proyectos</button>
+                <button class="btn-secondary" onclick="window.location.href='contactos.html'">Contactar</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="epo9_logo.jpg" alt="EPO-9 Logo">
+        </div>
+    </section>
+
+    <!-- Sección de Valores -->
+    <section class="valores-section">
+        <div class="section-header">
+            <h2>Nuestros Valores</h2>
+            <p>Los principios que guían cada proyecto y decisión en EPO-9</p>
+        </div>
+        <div class="valores-grid">
+            <div class="valor-card fade-up">
+                <div class="valor-icon">⚡</div>
+                <h3>Innovación</h3>
+                <p>Buscamos constantemente nuevas formas de resolver problemas con tecnología accesible y eficiente.</p>
+            </div>
+            <div class="valor-card fade-up">
+                <div class="valor-icon">🔓</div>
+                <h3>Accesibilidad</h3>
+                <p>Creemos que la tecnología debe estar al alcance de todos, sin barreras económicas o técnicas.</p>
+            </div>
+            <div class="valor-card fade-up">
+                <div class="valor-icon">⭐</div>
+                <h3>Calidad</h3>
+                <p>Cada proyecto recibe nuestra máxima atención a detalles y compromiso con resultados excepcionales.
+                </p>
+            </div>
+            <div class="valor-card fade-up">
+                <div class="valor-icon">🤝</div>
+                <h3>Solidaridad</h3>
+                <p>Trabajamos con y para comunidades, priorizando proyectos con impacto social positivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Noticias -->
+    <section class="noticias">
+        <div class="section-header">
+            <h2>Noticias y Reconocimientos</h2>
+            <p>Mantente informado sobre nuestros últimos avances y logros</p>
+        </div>
+        <div class="noticias-grid">
+            <div class="noticia-card fade-up">
+                <div class="img-contenedor">
+                    <img src="epo9_logo.jpg" alt="Noticia" class="img-noticia">
+                    <div class="overlay"></div>
+                </div>
+                <div class="noticia-content">
+                    <h3>Inicio de EPO-9</h3>
+                    <p>Después de mucho tiempo en gestión, EPO-9 lleva a cabo su planeación oficial y establece sus
+                        objetivos para los próximos años.</p>
+                </div>
+            </div>
+
+            <div class="noticia-card fade-up">
+                <div class="img-contenedor">
+                    <img src="epo9_logo.jpg" alt="Noticia" class="img-noticia">
+                    <div class="overlay"></div>
+                </div>
+                <div class="noticia-content">
+                    <h3>Nuevo Proyecto: Stairway</h3>
+                    <p>Presentamos nuestro sistema modular automático para regular el agua en los hogares, diseñado para
+                        ser económico y fácil de implementar.</p>
+                </div>
+            </div>
+
+            <div class="noticia-card fade-up">
+                <div class="img-contenedor">
+                    <img src="epo9_logo.jpg" alt="Noticia" class="img-noticia">
+                    <div class="overlay"></div>
+                </div>
+                <div class="noticia-content">
+                    <h3>Alianza Estratégica</h3>
+                    <p>EPO-9 establece una colaboración con instituciones educativas para desarrollar proyectos de
+                        tecnología accesible en comunidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <p>© 2025 EPO-9. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:contacto@epo9.com">contacto@epo9.com</a> | Tel: +52 123 456 7890</p>
+    </footer>
+
+    <script>
+
+        // Animación de elementos al hacer scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeElements = document.querySelectorAll('.fade-up');
+
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+
+            // Efecto de navbar al hacer scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
